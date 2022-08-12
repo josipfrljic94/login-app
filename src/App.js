@@ -95,9 +95,6 @@ const App = () => {
 
   return (
     <>
-      {t("country")}
-      <h1>Selected:{formValues.country}</h1>
-      <h1>Selected:{formValues.gender}</h1>
       <div className="container-whole">
         {loading ? (
           <PropagateLoader

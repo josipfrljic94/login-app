@@ -56,6 +56,11 @@ const AppProvider = ({ children }) => {
     );
   };
 
+  //TODO NEXT STEP REMOVE COMPLITLY IMPLEMENT LNG 
+  //TODO INPUT FORM MAKE REUSABLE
+  //TODO MAKE VALIDATE FUNCTION DRY
+  //! REFACTOR CONTEXT EXAMPLE SETDATA 
+
   const validate = (values) => {
     const errors = {};
     const firstNameRegex = /^[a-zA-Z]*$/;
