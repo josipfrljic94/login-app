@@ -4,5 +4,6 @@
   "gender":"GenderEs",
   "male": "Masculino",
   "female": "Femenino",
-  "next":"Siguiente"
+  "next":"Siguiente",
+  "back":"Espalda"
 }

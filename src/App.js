@@ -39,9 +39,6 @@ const App = () => {
     setFormLoader,
   } = useContext(AppContext);
 
-  const rightNavContainerRef = useRef(null);
-  const leftNavContainerRef = useRef(null);
-
   useEffect(() => {
     setLoading(true);
     let timeOut = setTimeout(() => {
@@ -66,31 +63,6 @@ const App = () => {
     return () => clearTimeout(timeOut);
   }, [isSubmit]);
 
-  useEffect(() => {
-    const containerHeight =
-      rightNavContainerRef.current.getBoundingClientRect().height;
-    leftNavContainerRef.current.style.height = `${containerHeight}px`;
-    if (count === 1 && formErrors) {
-      leftNavContainerRef.current.style.height = `140vh`;
-      rightNavContainerRef.current.style.marginTop = `-10vh`;
-    }
-    if (count === 2) {
-      leftNavContainerRef.current.style.height = `100vh`;
-    }
-    if (count === 2 && formErrors) {
-      leftNavContainerRef.current.style.height = `120vh`;
-    }
-    if (count === 3) {
-      leftNavContainerRef.current.style.height = `100vh`;
-    }
-    if (count === 3 && formErrors) {
-      leftNavContainerRef.current.style.height = `120vh`;
-    }
-    if (count === 4) {
-      leftNavContainerRef.current.style.height = `120vh`;
-    }
-  }, [count]);
-
   const genderList = getGenders(t);
 
   return (
@@ -105,7 +77,7 @@ const App = () => {
           />
         ) : (
           <>
-            <div className="left-side-nav" ref={leftNavContainerRef}>
+            <div className="left-side-nav">
               <div className="image-container">
                 <img
                   src="https://i.imgur.com/uR4AR4i.png"
@@ -114,7 +86,7 @@ const App = () => {
                 />
               </div>
             </div>
-            <div className="right-side-nav" ref={rightNavContainerRef}>
+            <div className="right-side-nav">
               {formLoader &&
                 Object.keys(formErrors).length === 0 &&
                 isSubmit && (
@@ -501,8 +473,7 @@ const App = () => {
                       onClick={() => setCount(count - 1)}
                       disabled={count < 2}
                     >
-                      {english && "Back"}
-                      {spanish && "Espalda"}
+                      {t("back")}
                     </button>
                   ) : null}
                 </form>
@@ -513,8 +484,7 @@ const App = () => {
                     onClick={() => setCount(count - 1)}
                     disabled={count < 2}
                   >
-                    {english && "Back"}
-                    {spanish && "Espalda"}
+                      {t("back")}
                   </button>
                 ) : null}
                 {count < 4 ? (

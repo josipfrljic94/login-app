@@ -198,13 +198,11 @@ button {
 
 .container-whole {
   display: flex;
-  align-items: center;
-  gap: 250px;
+  flex-wrap: wrap;
 }
 
 .left-side-nav {
-  width: 50%;
-  height: 110vh;
+  flex: 1 1 40%;
   background: url('https://i.imgur.com/tYPE5Wv.png');
   background-repeat: no-repeat;
 }
@@ -239,10 +237,12 @@ button {
 
 
 .image-container {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40%;
+  position: sticky;
+  top: 0;
 }
 
 
@@ -257,6 +257,7 @@ button {
   margin-bottom: 30px;
   max-width: 100%;
   width: 350px;
+  margin:0 auto;
 }
 
 .progress-container::before {
@@ -410,7 +411,12 @@ input {
 }
 
 .right-side-nav {
-  margin-left: -40px;
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  box-sizing: border-box;
+  padding: 0 5%;
 }
 
 .btn-next {

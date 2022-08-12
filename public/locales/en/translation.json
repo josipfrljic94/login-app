@@ -4,6 +4,6 @@
   "gender": "Gender",
   "male": "male",
   "female": "female",
-  "next":"Next"
-  
+  "next":"Next",
+  "back":"Back"
 }
