@@ -1,3 +1,6 @@
 {
-    "learn": "learni18nextfro eng"
+  "learn": "learni18nextfro eng",
+  "country":"Country",
+  "male": "male",
+  "female": "female"
 }

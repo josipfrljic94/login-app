@@ -130,7 +130,6 @@ button {
   width: 350px;
   margin-left: -50px;
   box-shadow: 3px 3px 10px 6px rgba(0,0,0,0.06);
-  border: 2px solid #002D62;
   background-color: transparent !important;
   border-radius: 5px;
   font-weight: bold;
@@ -141,11 +140,14 @@ button {
 }
 
 .dropdown .dropdown-content {
-  padding: 15px;
+  padding: 0;
+  height: 30px;
   box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
   font-weight: 500;
+  border: 2px solid #002D62;
   width: 95%;
 }
+
 
 .dropdown .dropdown-content .dropdown-item {
   padding: 10px;

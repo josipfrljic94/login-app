@@ -1,3 +1,6 @@
 {
-  "learn": "learni18next"
+  "learn": "learni18next",
+  "country":"El pais",
+  "male": "Masculino",
+  "female": "Femenino"
 }

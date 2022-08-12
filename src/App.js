@@ -2,12 +2,13 @@ import React, { useEffect, useRef, useContext, useState } from "react";
 import { terms } from "./termsOfService";
 import { spanishTerms } from "./termsOfSpanish";
 import GenderDropdown from "./GenderDropdown";
-import CountryDropdown from "./CountryDropdown";
 import MonthDropdown from "./MonthDropdown";
 import YearDropdown from "./YearDropdown";
 import { AppContext } from "./context";
 import PropagateLoader from "react-spinners/PropagateLoader";
 import { useTranslation } from "react-i18next";
+import { DropDown } from "./components/DropDown/DropDown";
+import { countryList } from "./data";
 
 const App = () => {
   const { t } = useTranslation();
@@ -93,7 +94,8 @@ const App = () => {
 
   return (
     <>
-    {t("learn")}
+      {t("country")}
+      <h1>Selected:{formValues.country}</h1>
       <div className="container-whole">
         {loading ? (
           <PropagateLoader
@@ -257,7 +259,14 @@ const App = () => {
                             />
                           </div>
                           <p className="error-message">{formErrors.phone}</p>
-                          <CountryDropdown />
+                          {/* <CountryDropdown /> */}
+                          <DropDown
+                            t={t}
+                            label={t("country")}
+                            dropdownData={countryList}
+                            selectCountry={handleChange}
+                            selectedCountry={formValues.country}
+                          />
                           {!selectedCountry && isSubmit ? (
                             <p className="error-message">
                               {english ? "Pick a country" : "Elige un país"}
