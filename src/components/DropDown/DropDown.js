@@ -1,9 +1,9 @@
 import React from "react";
 
-
 //TODO ADD STYLING
 export const DropDown = ({
   t,
+  keyValue,
   label,
   dropdownData,
   selectCountry,
@@ -13,7 +13,7 @@ export const DropDown = ({
     <h1 className="dropdown-header header-label">{t(label)}</h1>
     <select
       className="dropdown-content"
-      name="country"
+      name={keyValue}
       value={selectedCountry}
       onChange={selectCountry}
     >

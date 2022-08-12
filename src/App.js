@@ -1,17 +1,16 @@
 import React, { useEffect, useRef, useContext, useState } from "react";
 import { terms } from "./termsOfService";
 import { spanishTerms } from "./termsOfSpanish";
-import GenderDropdown from "./GenderDropdown";
 import MonthDropdown from "./MonthDropdown";
 import YearDropdown from "./YearDropdown";
 import { AppContext } from "./context";
 import PropagateLoader from "react-spinners/PropagateLoader";
 import { useTranslation } from "react-i18next";
 import { DropDown } from "./components/DropDown/DropDown";
-import { countryList } from "./data";
-
+import { countryList, getGenders, langs } from "./data";
+//TODO MAKE SAME TING WITH FORM LABEL
 const App = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const {
     count,
     setCount,
@@ -92,10 +91,13 @@ const App = () => {
     }
   }, [count]);
 
+  const genderList = getGenders(t);
+
   return (
     <>
       {t("country")}
       <h1>Selected:{formValues.country}</h1>
+      <h1>Selected:{formValues.gender}</h1>
       <div className="container-whole">
         {loading ? (
           <PropagateLoader
@@ -123,17 +125,17 @@ const App = () => {
                     {english ? "Registration Complete" : "Registro Completo"}
                   </div>
                 )}
-              {count < 4 ? (
-                <div className="language-container">
-                  <button onClick={handleEnglish} className="eng-btn"></button>
-                  <button onClick={handleSpanish} className="spa-btn"></button>
-                </div>
-              ) : (
-                <div className="language-container language-container-step4">
-                  <button onClick={handleEnglish} className="eng-btn"></button>
-                  <button onClick={handleSpanish} className="spa-btn"></button>
-                </div>
-              )}
+
+              <div className="language-container">
+                {Object.values(langs).map((lng) => (
+                  <button
+                    type="submit"
+                    onClick={() => i18n.changeLanguage(lng.abbr)}
+                    key={lng.cl}
+                    className={lng.cl}
+                  ></button>
+                ))}
+              </div>
 
               <div className="app">
                 <div className="progressBar-container">
@@ -221,7 +223,14 @@ const App = () => {
                           </div>
                           <p className="error-message">{formErrors.lastName}</p>
                           <div className="form-group">
-                            <GenderDropdown />
+                            <DropDown
+                              t={t}
+                              keyValue={"gender"}
+                              label={t("gender")}
+                              dropdownData={genderList}
+                              selectCountry={handleChange}
+                              selectedCountry={formValues.gender}
+                            />
                             {!selectedGender && isSubmit ? (
                               <p className="error-message">
                                 {english ? "Pick a gender" : "Elige un género"}
@@ -262,6 +271,7 @@ const App = () => {
                           {/* <CountryDropdown /> */}
                           <DropDown
                             t={t}
+                            keyValue="country"
                             label={t("country")}
                             dropdownData={countryList}
                             selectCountry={handleChange}
@@ -517,8 +527,7 @@ const App = () => {
                     onClick={() => setCount(count + 1)}
                     disabled={count > 4}
                   >
-                    {english && "Next"}
-                    {spanish && "Siguiente"}
+                    {t("next")}
                   </button>
                 ) : null}
               </div>

@@ -1,7 +1,8 @@
 //TODO MOVE TO LOCALES
-//#EXAMPLE USAGE
+//#EXAMPLE USAGE DOWN TO GENDER
+//OPTION TO FROM BACKEND
 // function countryList(t)=>(
-//     "Afghanistan":t( "Afghanistan") 
+//     "Afghanistan":t( "Afghanistan")
 // )
 
 export const countryList = [
@@ -255,3 +256,18 @@ export const countryList = [
   "Zimbabwe",
   "Åland Islands",
 ];
+
+export const getGenders = (t) => [t("male"), t("female")];
+
+export const langs = {
+  en: {
+    nativeName: "English",
+    cl: "eng-btn",
+    abbr: "en",
+  },
+  es: {
+    nativeName: "España",
+    cl: "spa-btn",
+    abbr: "es",
+  },
+};

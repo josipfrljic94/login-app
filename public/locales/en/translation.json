@@ -1,6 +1,9 @@
 {
   "learn": "learni18nextfro eng",
   "country":"Country",
+  "gender": "Gender",
   "male": "male",
-  "female": "female"
+  "female": "female",
+  "next":"Next"
+  
 }
