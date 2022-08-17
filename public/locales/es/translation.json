@@ -1,9 +1,22 @@
 {
   "learn": "learni18next",
-  "country":"El pais",
-  "gender":"GenderEs",
+  "country": "El pais",
+  "gender": "GenderEs",
   "male": "Masculino",
   "female": "Femenino",
-  "next":"Siguiente",
-  "back":"Espalda"
+  "next": "Siguiente",
+  "back": "Espalda",
+  "firstName": "El Primer Nombre",
+  "lastName": "El Apellido",
+  "insertText": "Intro Text",
+  "date": "Fecha de nacimiento",
+  "phone": "Teléfono",
+  "username": "Nombre de usuario",
+  "email": "Email",
+  "password": "Contraseña",
+  "confirmPassword": "Confirmar contraseña",
+  "ccn": "Número de tarjeta de control",
+  "expirationMonth": "Mes de expiración",
+  "expirationYear": "Año de caducidad",
+  "cvv": "CVV"
 }

@@ -1,9 +1,22 @@
 {
   "learn": "learni18nextfro eng",
-  "country":"Country",
+  "country": "Country",
   "gender": "Gender",
   "male": "male",
   "female": "female",
-  "next":"Next",
-  "back":"Back"
+  "next": "Next",
+  "back": "Back",
+  "firstName": "First Name",
+  "lastName": "Last Name",
+  "insertText": "Insert Text",
+  "date": "Date",
+  "phone": "Phone",
+  "username": "Username",
+  "email": "Email",
+  "password": "Password",
+  "confirmPassword": "Confirm Password",
+  "ccn": "Control card number",
+  "expirationMonth": "Expiration month",
+  "expirationYear": "Expiration year",
+  "cvv": "CVV"
 }

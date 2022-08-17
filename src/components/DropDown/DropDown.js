@@ -6,16 +6,16 @@ export const DropDown = ({
   keyValue,
   label,
   dropdownData,
-  selectCountry,
-  selectedCountry,
+  onChange,
+  value,
 }) => (
   <div className="dropdown">
     <h1 className="dropdown-header header-label">{t(label)}</h1>
     <select
       className="dropdown-content"
       name={keyValue}
-      value={selectedCountry}
-      onChange={selectCountry}
+      value={value}
+      onChange={onChange}
     >
       {dropdownData.map((country, index) => {
         return (
